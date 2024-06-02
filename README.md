@@ -1,2 +1,2 @@
 # CodeWars
-My solutions to Various CodeWars Kata
+My solutions to various CodeWars Kata
