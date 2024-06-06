@@ -1,0 +1,23 @@
+def find_it(seq):
+    """
+    Find the element that occurs an odd number of times in the given sequence.
+
+    Args:
+        seq (list): The input sequence.
+
+    Returns:
+        int: The element that occurs an odd number of times.
+    """
+    
+    # First attempt / Brute force
+   
+    occurrences = {}
+    for item in seq:
+        if item in occurrences:
+            occurrences[item] += 1
+        else:
+            occurrences[item] = 1
+    
+    for key, value in occurrences.items():
+        if value % 2 != 0:
+            return key
