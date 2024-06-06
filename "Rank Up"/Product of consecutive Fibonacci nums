@@ -1,0 +1,27 @@
+def product_fib(prod):
+    """
+    Find two consecutive Fibonacci numbers whose product equals or is greater than the given number.
+
+    Args:
+        prod (int): The product to search for.
+
+    Returns:
+        list: A list containing two consecutive Fibonacci numbers and a boolean indicating 
+              whether their product equals the given number.
+
+    Examples:
+        >>> productFib(714)
+        [21, 34, True]
+        >>> productFib(800)
+        [34, 55, False]
+    """
+
+    fibprev = 0
+    fibcurr = 1
+    
+    while fibprev * fibcurr < prod:
+          temp = fibprev
+          fibprev = fibcurr
+          fibcurr = temp + fibcurr
+        
+    return [fibprev, fibcurr, fibprev * fibcurr == prod]
