@@ -1,0 +1,37 @@
+def comp(array1, array2):
+    """
+    Compare two arrays to check if the elements of one array are the squares of the elements of the other array,
+    regardless of the order.
+
+    Args:
+        array1 (list): The first array.
+        array2 (list): The second array.
+
+    Returns:
+        bool: True if the elements of array1 are the squares of the elements of array2, 
+              False otherwise.
+
+    Examples:
+        >>> comp([1, 2, 3], [1, 4, 9])
+        True
+        >>> comp([1, 2, 3], [1, 4, 8])
+        False
+        >>> comp([2, 3, 4], [4, 9, 16])
+        True
+    """
+    is_none = lambda array: array is None
+    valid_array1 = is_none(array1)
+    valid_array2 = is_none(array2)
+    
+    if valid_array1 or valid_array2:
+        return False
+
+    if len(array1) != len(array2):
+        return False
+    
+    squared_array1 = [x ** 2 for x in array1]
+    
+    squared_array1.sort()
+    array2.sort()
+    
+    return squared_array1 == array2
