@@ -1,0 +1,24 @@
+def project_euler_p1(number):
+    """
+    Find the sum of all the multiples of 3 or 5 below a given number.
+
+    Args:
+        number (int): The upper limit number.
+
+    Returns:
+        int: The sum of all the multiples of 3 or 5 below the given number.
+
+    Examples:
+        >>> solution(10)
+        23
+        >>> solution(4)
+        3
+        >>> solution(3)
+        0
+    """
+    arrsum = 0
+    
+    for num in range(number):    
+        if num % 3 == 0 or num % 5 == 0:
+            arrsum += num   
+  
